@@ -2,10 +2,11 @@ from attacks.recon import recon_target
 from attacks.generator import generate_attack
 from attacks.attacker import fire_attack
 from evaluator.judge import judge_attack
-from memory.knowledge_base import store_finding, get_evolution_insights, load_kb
+from memory.knowledge_base import store_finding, get_evolution_insights, load_kb, save_kb
 from attacks.chain import generate_chain_strategy, execute_chain, save_chain_result
+from memory.feature_extractor import extract_features, store_feature_vector
+from memory.statistics_engine import generate_statistics_report
 from datetime import datetime
-
 
 def run_spectre(target_description, num_attacks=2):
     """
@@ -48,6 +49,19 @@ def run_spectre(target_description, num_attacks=2):
 
         print(f"\n[PHASE 5] STORING TO KNOWLEDGE BASE")
         kb = store_finding(profile, attack, attack_result, verdict)
+        # Extract and store feature vector
+        features = extract_features(
+            attack.get("payload", ""),
+            attack_result.get("target_response", "")
+        )
+        kb = store_feature_vector(
+            kb,
+            features,
+            attack.get("attack_type", "unknown"),
+            verdict.get("verdict", "FAILED")
+        )
+        from memory.knowledge_base import save_kb
+        save_kb(kb)
 
         all_findings.append({
             "attack": attack,

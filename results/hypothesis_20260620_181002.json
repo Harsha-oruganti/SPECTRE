@@ -1,0 +1,213 @@
+{
+  "timestamp": "2026-06-20T18:10:02.852256",
+  "stats_used": {
+    "vectors": 14,
+    "findings": 29,
+    "effective_rate": 0.0345
+  },
+  "hypotheses_generated": 3,
+  "experiments_designed": 2,
+  "key_finding": "Authority word count has a strong positive correlation (0.7817) with effective rate, suggesting that increasing authority word count may increase effective rate.",
+  "recommended_experiment": "H001: Increasing authority word count to 5+",
+  "data_gaps": [
+    "lack of data on the impact of authority word count on success rate",
+    "limited data on the effectiveness of different attack types"
+  ],
+  "hypotheses": [
+    {
+      "id": "H001",
+      "statement": "Increasing authority word count will increase effective rate.",
+      "evidence_basis": {
+        "statistic": "authority_word_count correlation",
+        "measured_value": 0.7817,
+        "source": "MEASURED FEATURE CORRELATIONS"
+      },
+      "prediction": {
+        "if_condition": "authority_word_count is increased from baseline to 5+",
+        "then_outcome": "effective_rate increases from 0.0345 to above 0.1",
+        "measurable_threshold": "effective_rate > 0.1"
+      },
+      "experiment": {
+        "control": "baseline authority word count",
+        "test_variation": "increased authority word count (5+)",
+        "sample_size": 100,
+        "duration_attacks": 10
+      },
+      "falsification": "if effective_rate does not increase after 10 controlled trials",
+      "priority": "HIGH",
+      "confidence": 0.8,
+      "novelty": "MEDIUM"
+    },
+    {
+      "id": "H002",
+      "statement": "Increasing authority word density will increase effective rate.",
+      "evidence_basis": {
+        "statistic": "authority_word_density correlation",
+        "measured_value": 0.7009,
+        "source": "MEASURED FEATURE CORRELATIONS"
+      },
+      "prediction": {
+        "if_condition": "authority_word_density is increased from baseline to 0.5+",
+        "then_outcome": "effective_rate increases from 0.0345 to above 0.08",
+        "measurable_threshold": "effective_rate > 0.08"
+      },
+      "experiment": {
+        "control": "baseline authority word density",
+        "test_variation": "increased authority word density (0.5+)",
+        "sample_size": 100,
+        "duration_attacks": 10
+      },
+      "falsification": "if effective_rate does not increase after 10 controlled trials",
+      "priority": "MEDIUM",
+      "confidence": 0.7,
+      "novelty": "LOW"
+    },
+    {
+      "id": "H003",
+      "statement": "Reducing safety phrase density will increase effective rate.",
+      "evidence_basis": {
+        "statistic": "safety_phrase_density correlation",
+        "measured_value": -0.2804,
+        "source": "MEASURED FEATURE CORRELATIONS"
+      },
+      "prediction": {
+        "if_condition": "safety_phrase_density is reduced from baseline to 0.2-",
+        "then_outcome": "effective_rate increases from 0.0345 to above 0.05",
+        "measurable_threshold": "effective_rate > 0.05"
+      },
+      "experiment": {
+        "control": "baseline safety phrase density",
+        "test_variation": "reduced safety phrase density (0.2-)",
+        "sample_size": 100,
+        "duration_attacks": 10
+      },
+      "falsification": "if effective_rate does not increase after 10 controlled trials",
+      "priority": "LOW",
+      "confidence": 0.4,
+      "novelty": "LOW"
+    }
+  ],
+  "experiments": [
+    {
+      "experiment_id": "H001_AUTHORITY_WORD_COUNT_EFFECT",
+      "hypothesis_id": "H001",
+      "design": {
+        "type": "DOSE_RESPONSE",
+        "independent_variable": "authority_word_count",
+        "dependent_variable": "effective_rate",
+        "controlled_variables": [
+          "emotional_word_target",
+          "chain_length",
+          "attack_type"
+        ]
+      },
+      "control_group": {
+        "attack_type": "PHISHING_EMAIL",
+        "authority_word_target": 0,
+        "emotional_word_target": 0,
+        "chain_length": 1,
+        "sample_size": 100
+      },
+      "test_groups": [
+        {
+          "group_id": "T1",
+          "modification": "increase authority word count",
+          "authority_word_target": 5,
+          "emotional_word_target": 0,
+          "chain_length": 1,
+          "sample_size": 100
+        }
+      ],
+      "measurement_protocol": {
+        "primary_metric": "effective_rate",
+        "secondary_metrics": [
+          "click-through rate",
+          "conversion rate"
+        ],
+        "feature_to_extract": [
+          "authority word count",
+          "emotional word count"
+        ]
+      },
+      "success_threshold": "effective_rate > 0.1",
+      "total_attacks_needed": 10,
+      "expected_duration_runs": 30
+    },
+    {
+      "experiment_id": "H002_AUTHORITY_WORD_DENSITY",
+      "hypothesis_id": "H002",
+      "design": {
+        "type": "DOSE_RESPONSE",
+        "independent_variable": "authority_word_density",
+        "dependent_variable": "effective_rate",
+        "controlled_variables": [
+          "emotional_word_target",
+          "chain_length"
+        ]
+      },
+      "control_group": {
+        "attack_type": "TEXT_BASED",
+        "authority_word_target": 0,
+        "emotional_word_target": 0,
+        "chain_length": 1,
+        "sample_size": 100
+      },
+      "test_groups": [
+        {
+          "group_id": "T1",
+          "modification": "INCREASE_AUTHORITY_WORD_DENSITY",
+          "authority_word_target": 0.5,
+          "emotional_word_target": 0,
+          "chain_length": 1,
+          "sample_size": 100
+        },
+        {
+          "group_id": "T2",
+          "modification": "INCREASE_AUTHORITY_WORD_DENSITY",
+          "authority_word_target": 0.75,
+          "emotional_word_target": 0,
+          "chain_length": 1,
+          "sample_size": 100
+        }
+      ],
+      "measurement_protocol": {
+        "primary_metric": "effective_rate",
+        "secondary_metrics": [
+          "attack_success_rate",
+          "average_attack_time"
+        ],
+        "feature_to_extract": [
+          "word_embedding",
+          "sentence_similarity"
+        ]
+      },
+      "success_threshold": "effective_rate > 0.08",
+      "total_attacks_needed": 10,
+      "expected_duration_runs": 5
+    }
+  ],
+  "validations": [
+    {
+      "hypothesis_id": "H001",
+      "timestamp": "2026-06-20T18:10:02.828877",
+      "measured_effective": 0.0345,
+      "threshold": 0.1,
+      "passed_threshold": false,
+      "sample_size": 14,
+      "sufficient_data": true,
+      "status": "REJECTED",
+      "message": "Effective rate 0.0345 < threshold 0.1"
+    },
+    {
+      "hypothesis_id": "H002",
+      "timestamp": "2026-06-20T18:10:02.840080",
+      "measured_effective": 0.0345,
+      "threshold": 0.08,
+      "passed_threshold": false,
+      "sample_size": 14,
+      "sufficient_data": true,
+      "status": "REJECTED",
+      "message": "Effective rate 0.0345 < threshold 0.08"
+    }
+  ]
+}

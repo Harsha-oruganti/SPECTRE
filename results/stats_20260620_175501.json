@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-06-20T17:55:01.896802",
+  "data_quality": {
+    "total_findings": 15,
+    "feature_vectors": 0,
+    "coverage": 0.0,
+    "sufficient_for_stats": false,
+    "sufficient_for_correlation": false,
+    "sufficient_for_hypotheses": false
+  },
+  "outcomes": {
+    "total_attacks": 15,
+    "success_count": 0,
+    "partial_count": 0,
+    "failed_count": 15,
+    "success_rate": 0.0,
+    "partial_rate": 0.0,
+    "failure_rate": 1.0,
+    "effective_rate": 0.0,
+    "severity": {
+      "mean": 1.8667,
+      "median": 2,
+      "std": 0.4989,
+      "max": 2,
+      "min": 0,
+      "nonzero": 14
+    }
+  },
+  "attack_type_performance": {
+    "Social Engineering": {
+      "total": 7,
+      "success": 0,
+      "partial": 0,
+      "failed": 7,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 2.0,
+      "max_severity": 2
+    },
+    "Pretexting": {
+      "total": 1,
+      "success": 0,
+      "partial": 0,
+      "failed": 1,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 2.0,
+      "max_severity": 2
+    },
+    "Adversarial Example Attack": {
+      "total": 1,
+      "success": 0,
+      "partial": 0,
+      "failed": 1,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 2.0,
+      "max_severity": 2
+    },
+    "Input Validation": {
+      "total": 1,
+      "success": 0,
+      "partial": 0,
+      "failed": 1,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 2.0,
+      "max_severity": 2
+    },
+    "Input Manipulation": {
+      "total": 4,
+      "success": 0,
+      "partial": 0,
+      "failed": 4,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 1.5,
+      "max_severity": 2
+    },
+    "Input Validation Attack": {
+      "total": 1,
+      "success": 0,
+      "partial": 0,
+      "failed": 1,
+      "success_rate": 0.0,
+      "effective_rate": 0.0,
+      "avg_severity": 2.0,
+      "max_severity": 2
+    }
+  },
+  "behavioral": {
+    "error": "No feature vectors"
+  },
+  "correlations": {
+    "error": "Need 3+ vectors, have 0"
+  },
+  "efficiency": {}
+}
