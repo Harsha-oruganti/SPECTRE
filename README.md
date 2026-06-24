@@ -1,99 +1,262 @@
 # SPECTRE 🔴
 
-### Systematic Prompt Exploitation & Cognitive Threat Recognition Engine
+## Systematic Prompt Exploitation & Cognitive Threat Research Engine
 
-> World's first self-evolving AI Red Team platform that uses adversarial AI to autonomously discover, chain, and document vulnerabilities in LLM-powered systems.
-
----
-
-## What is SPECTRE?
-
-SPECTRE is not a simple vulnerability scanner.
-
-It uses **AI to attack AI** — generating novel, dynamic attack payloads
-
-against LLM systems without any static prompt library.
+### Autonomous AI Security Research Platform for LLM Systems
 
 ---
 
-## What Makes It Unprecedented
+## Overview
 
-| Capability | Other Tools | SPECTRE |
+SPECTRE is an autonomous AI security research platform designed to evaluate, analyze, and understand vulnerabilities in Large Language Model (LLM) applications.
 
-|---|---|---|
+Unlike traditional red-teaming tools that rely on static prompt libraries, SPECTRE generates adversarial attack strategies dynamically, executes them against target systems, evaluates responses, extracts measurable features, and builds a growing knowledge base of observed security behaviors.
 
-| Attack Generation | Static prompt lists | AI generates novel attacks dynamically |
-
-| Learning | None | Evolves based on what works |
-
-| Exploit Chaining | Single-turn | Multi-turn adversarial chains |
-
-| Scoring | Pass/Fail | AI-specific CVSS severity scoring |
-
-| Reporting | Basic logs | CVE-style professional PDF reports |
+The long-term vision is to create an AI system capable of continuously researching, benchmarking, and understanding LLM security risks.
 
 ---
 
-## Attack Modules
+## Why SPECTRE?
 
-- Prompt Injection (LLM01)
+Modern AI systems are increasingly deployed across:
 
-- Jailbreak Generator (LLM02)
+- Banking
+- Healthcare
+- Customer Support
+- Human Resources
+- Legal Services
+- Enterprise Knowledge Systems
 
-- System Prompt Extraction (LLM06)
+Security testing for these systems remains largely manual and difficult to scale.
 
-- PII Leakage (LLM06)
+SPECTRE explores a different approach:
 
-- Role Manipulation (LLM02)
-
-- Hallucination Induction (LLM09)
-
-- Context Poisoning (LLM01)
-
-- Multi-modal Attacks (LLM07)
+**AI evaluating AI through continuous adversarial experimentation.**
 
 ---
 
-## Tech Stack
+## Core Architecture
+
+Attack Generation
+
+↓
+
+Target Interaction
+
+↓
+
+Response Evaluation
+
+↓
+
+Feature Extraction
+
+↓
+
+Statistical Analysis
+
+↓
+
+Hypothesis Generation
+
+↓
+
+Research Memory
+
+↓
+
+Pattern Intelligence
+
+↓
+
+Knowledge Accumulation
+
+---
+
+## Key Capabilities
+
+### Dynamic Attack Generation
+
+Generate adversarial prompts and attack chains using LLMs rather than relying solely on predefined prompt collections.
+
+### Multi-Turn Attack Chains
+
+Construct and evaluate attack sequences across multiple conversational turns.
+
+### Behavioral Analysis
+
+Analyze target responses to identify:
+
+- Refusal patterns
+- Verification behavior
+- Information disclosure tendencies
+- Safety mechanism triggers
+- Compliance indicators
+
+### Feature Extraction
+
+Convert responses into measurable security signals such as:
+
+- Authority framing
+- Emotional manipulation
+- Social engineering indicators
+- Safety phrase density
+- PII exposure indicators
+
+### Statistical Intelligence
+
+Measure:
+
+- Attack effectiveness
+- Feature correlations
+- Behavioral trends
+- Risk indicators
+- Target resilience
+
+### Hypothesis Generation
+
+Generate evidence-based hypotheses from observed attack outcomes.
+
+Example:
+
+> Increased authority framing may correlate with higher compliance rates.
+
+### Research Memory
+
+Maintain a persistent knowledge base containing:
+
+- Historical attack outcomes
+- Extracted features
+- Statistical findings
+- Generated hypotheses
+- Experimental evidence
+
+---
+
+## Current Attack Modules
+
+- Prompt Injection
+- Jailbreak Generation
+- System Prompt Extraction
+- PII Leakage Assessment
+- Role Manipulation
+- Hallucination Induction
+- Context Manipulation
+- Multi-Turn Social Engineering Chains
+
+---
+
+## Technology Stack
+
+### Core
 
 - Python 3.10+
+- Groq API
+- Llama 3.3 70B
+- Llama 3.1 8B
 
-- Groq API (Llama 4 Scout + Llama 3.3 70B)
+### AI Components
 
-- Google Gemini 2.0 Flash
-
+- Google Gemini
 - LangChain
 
-- ReportLab (PDF generation)
+### Reporting
+
+- JSON Evidence Storage
+- PDF Intelligence Reports
 
 ---
 
-## Current Status
+## Current Development Status
 
-- [x] Stage 1 — Foundation & First Attack ✅
+### Stage 1 — Foundation Layer
 
-- [ ] Stage 2 — Recon Engine + Attack Generator
+ Complete
 
-- [ ] Stage 3 — Exploit Chain Engine
+### Stage 2 — Reconnaissance & Attack Generation
 
-- [ ] Stage 4 — Evolution & Mutation Engine
+ Complete
 
-- [ ] Stage 5 — Scoring & Intelligence Report
+### Stage 3 — Multi-Turn Exploit Chains
 
-- [ ] Stage 6 — Dashboard & Launch
+ Complete
+
+### Stage 4 — Evolution & Pattern Intelligence
+
+ Complete
+
+### Stage 5 — Research Reporting
+
+ In Progress
+
+### Stage 6 — Dashboard & Benchmarking Platform
+
+ Planned
+
+---
+
+## Research Objectives
+
+SPECTRE currently investigates:
+
+- Prompt Injection Risks
+- Jailbreak Resistance
+- Information Disclosure Patterns
+- Social Engineering Vulnerabilities
+- System Prompt Exposure
+- Behavioral Security Trends
+
+Future goals include:
+
+- Multi-model benchmarking
+- Automated hypothesis validation
+- Continuous AI security experimentation
+- LLM security scoring frameworks
+
+---
+
+## Enterprise Applications
+
+### AI Security Assessments
+
+Evaluate AI assistants before deployment.
+
+### Continuous Red Teaming
+
+Automate security testing at scale.
+
+### AI Governance
+
+Support internal AI risk management initiatives.
+
+### Security Research
+
+Analyze and understand emerging attack patterns.
+
+### Benchmarking
+
+Compare security posture across AI systems and configurations.
+
+---
+
+## Vision
+
+The long-term objective of SPECTRE is to evolve from an AI red-teaming tool into an autonomous AI security research platform capable of continuously discovering, testing, and documenting vulnerabilities in modern AI systems.
 
 ---
 
 ## Author
 
-**Oruganti Sriharsha Dileep**
+Oruganti Sriharsha Dileep
 
-AI Red Teaming Engineer | QA Automation | IBM India
+QA Automation Engineer | AI Security Research Enthusiast
 
-[GitHub]([https://github.com/Harsha-oruganti](https://github.com/Harsha-oruganti))
+IBM India
 
 ---
 
-> ⚠️ SPECTRE is built for authorized security research and
+## Responsible Use
 
-> responsible disclosure only.
+SPECTRE is intended exclusively for authorized security testing, security research, and responsible disclosure activities.
+
+Do not use against systems without explicit authorization.
